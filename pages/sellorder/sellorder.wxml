@@ -1,0 +1,45 @@
+<view class="container">
+  <view class="publish-nav pfixed flex_tab bg_fff">
+    <view class="{{selected?'active':'default'}}" bindtap="selected">进行中</view>
+    <view class="{{selected1?'active':'default'}}" bindtap="selected1">已完成</view>
+  </view>
+  <block wx:if="{{is_data}}">
+    <view class="{{selected?'show':'hidden'}} margin50px">
+      <view wx:for="{{orderlist}}" class="order_list bg_fff">
+          <view class="order_con pr clearfix" bindtap="jump_checkorder" data-is_kanjia="{{item.is_kanjia}}" data-adstatus="{{item.dstatus}}" data-from="{{from}}" data-order_id="{{item.order_id}}" data-atype="{{item.a_type}}">
+        <image mode='aspectFill' src="{{item.goods_pic}}" class="fl" />
+        <view class="order-right">
+          <view class="order_pro_tit txt_Overflow">{{item.cate_name}}</view>
+          <text>{{item.dstatus_ch}}</text>
+          <block wx:if="{{item.outtime}}">
+            <view class="timer small_gray">
+              <image src="../../dist/images/ico_02.png" />{{item.outtime_str}}
+            </view>
+          </block>
+        </view>
+        <text class="pro_price">¥ {{item.money}}</text>
+        </view>
+        </view>
+    </view>
+    <view class="{{selected1?'show':'hidden'}}  margin50px">
+      <view wx:for="{{orderlist}}" class="order_list over bg_fff">
+        <view bindtap='jump_checkorder' data-adstatus="{{item.dstatus}}" data-atype="{{item.a_type}}" data-from="{{from}}" data-order_id="{{item.order_id}}" class="order_con pr clearfix">
+          <image mode='aspectFill' src="{{item.goods_pic}}" class="fl" />
+          <view class="order-right">
+            <view class="order_pro_tit txt_Overflow">{{item.cate_name}}</view>
+            <view class="timer small_gray">{{item.ctime}}</view>
+          </view>
+          <text class="pro_price">¥ {{item.money}}</text>
+        </view>
+        <view class="order_btn_group clearfix">
+        </view>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="no_data">
+      <image src="../../dist/images/no_data.png" />
+      <view class="no_data_txt">没有找到订单信息哦~</view>
+    </view>
+  </block>
+  </view>

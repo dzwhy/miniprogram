@@ -1,0 +1,78 @@
+<!--component/publish_list/publish_list.wxml-->
+<template name="publish_list">
+  <block wx:if="{{showLoading}}">
+    <view class="loading-tip">拼命加载中…</view>
+  </block>
+  <block wx:else>
+    <block wx:if="{{mypublish}}">
+      <block wx:for="{{mypublish}}" wx:key="index" wx:item="item">
+        <view class="publish_list bg_fff ovehidden">
+          <view bindtap='jump_check' data-url="../detail/detail?publish_id={{item.publish_id}}" class="publish_info pr clearfix">
+            <image mode='aspectFill' src="{{item.image_url}}" class="fl" />
+            <view class="info_txt">
+              <view class="info_tit">{{item.title}}</view>
+              <view class="info_des txt_Moreflow">{{item.desc}}</view>
+              <text class="price">¥ {{item.price}}</text>
+            </view>
+            <block wx:if="{{selected}}">
+              <block wx:if="{{item.status==1}}">
+                <block wx:if="{{item.hoted}}">
+                  <view catchtap="nofresh_publish" style='background-color:#ccc' class="fr btn hot-btn">已加热</view>
+                </block>
+                <block wx:else>
+                  <view catchtap="fresh_publish" data-id='{{item.publish_id}}' data-index='{{index}}' class="fr btn hot-btn">加热</view>
+                </block>
+              </block>
+            </block>
+            <block wx:else>
+              <!-- <view class="fr down_txt">已下架</view> -->
+            </block>
+          </view>
+          <view class="info_foot clearfix">
+            <block wx:if="{{selected}}">
+              <view class="timer fl">
+                <block wx:if="{{item.status==1}}">
+                  <image mode='aspectFill' src="../../dist/images/ico_02.png" />
+                  <text>{{item.expire_min}}</text>
+                </block>
+                <block wx:else>
+                  <text>审核中</text>
+                </block>
+              </view>
+              <view class="btn_right fr clearfix">
+                <view catchtap='showMD' data-id='{{item.publish_id}}' data-price='{{item.price}}' class="modify_price fl">快捷调价</view>
+                <image data-id='{{item.publish_id}}' data-index="{{index}}" bindtap="editmenu" src="../../dist/images/ico_32.png" />
+              </view>
+            </block>
+            <block wx:else>
+              <view class="timer fl">
+                <text>{{item.status_ch}}</text>
+              </view>
+              <view class="btn_right fr clearfix">
+              <block wx:if="{{item.status != '-1'}}">
+                <view bindtap='putaway' data-id='{{item.publish_id}}' data-index='{{index}}' class="modify_price fl">重新上架</view>
+              </block>  
+                <view bindtap='surexj' data-id='{{item.publish_id}}' data-index='{{index}}' class="delete_btn modify_price fl">彻底删除</view>
+              </view>
+            </block>
+          </view>
+        </view>
+      </block>
+    </block>
+    <block wx:else>
+      <view class="no_data">
+        <image src="../../dist/images/no_data.png" />
+        <view class="no_data_txt">没有找到发布的订单哦！快去发布吧~</view>
+        <view class="go_publish btn" bindtap='jump_check' data-url="../publish/publish">立即发布</view>
+      </view>
+    </block>
+  </block>
+  <block wx:if="{{hasMore}}">
+    <block wx:if="{{!loading}}">
+      <view class="loading-tip">上拉加载</view>
+    </block>
+  </block>
+  <block wx:else>
+    <view class="loading-tip">没有更多内容了</view>
+  </block>
+</template>

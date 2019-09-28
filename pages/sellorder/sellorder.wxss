@@ -1,0 +1,18 @@
+@import "../../common/style/style.wxss";
+page{background-color:#eee;}
+.flex_tab,.order_con{border-bottom:1px solid #eee;}
+.order_con{padding:14px 15px;}
+.order_list{margin-bottom:10px;}
+.order_con>image{width:100px;height:100px;border:1px solid #eee;}
+.order-right{padding:0 75px 0 117px;line-height:2;}
+.order_pro_tit{font-size:15px;}
+.order-right>text{display:block;margin:10px 0;font-size:14px;}
+.pro_price{position:absolute;top:18px;right:15px;font-size:13px;}
+.order_btn_group{padding:15px;}
+.right_btn>.del_good,.right_btn>.call_express{width:80px;}
+.right_btn>.del_good{border-color:#fed406;color:#333;}
+.right_btn>.call_express{border-color:#ff8929;color:#ff8929;margin-right:8px;}
+.look_logistics{border-color:#333;color:#333;}
+.look_refund{border-color:#0096ff;color:#0096ff;}
+.no_data{margin:130px auto 0;}
+.margin50px{margin-top: 50px;}

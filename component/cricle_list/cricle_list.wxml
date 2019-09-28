@@ -1,0 +1,45 @@
+<template name="cricle_list">
+  <view style="background: #eee;">
+    <block wx:if="{{showLoading}}">
+      <view class="loading-tip">拼命加载中…</view>
+    </block>
+    <block wx:else>
+      <block wx:if="{{haveCircle2=='1'}}">
+        <block wx:for="{{cricle_list}}" wx:for-item='item'>
+        <view class="new-three-content" bindtap="jump_check" data-url="../../circle_detail/circle_detail?circle_id={{item.id}}">
+          <view class="new-three-c-image">
+            <image src='{{item.b_img}}'></image>
+          </view>
+          <view class="new-three-c-txt clearfix">
+            <view class="fl new-three-c-lr">
+              <view>{{item.circle_name}}</view>
+              <view class="new-three-c-warcraft">{{item.circle_desc}}</view>
+            </view>
+            <view class="fr new-three-c-lr">
+              <view class="fr clearfix new-three-c-num">
+                <view class="fl">发布:{{item.circlePublish}}</view>
+                <image src='../../../dist/images/new_index_img10.png'></image>
+                <view class='fr'>{{item.fanceHot}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+        </block>
+        <block wx:if="{{hasMore}}">
+          <block wx:if="{{!loading}}">
+            <view class="loading-tip">上拉加载</view>
+          </block>
+        </block>
+        <block wx:else>
+          <view class="loading-tip">没有更多内容了</view>
+        </block>
+      </block>  
+      <block wx:else>
+        <view class="five-text" style='background: #fff;'>
+        <image src='../../../dist/images/no_data.png'></image>
+        <view class="five-text-txt">还没有圈子呢</view>
+        </view>
+      </block>
+    </block>
+  </view>
+</template>

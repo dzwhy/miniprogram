@@ -1,0 +1,20 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  box-sizing: border-box;
+  font-size:13px;
+  overflow:hidden;
+} 
+.fl{float:left}
+.fr{float:right}
+.txt_Overflow{overflow:hidden;text-overflow:ellipsis;white-space: nowrap;}
+.txt_Moreflow{display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;overflow: hidden;}
+.pr{position:relative;}
+.clearfix { zoom:1;}
+.clearfix:after {content: '';clear: both;display: block;visibility: hidden;height: 0;}
+.pad_30{padding:0 30rpx;}
+.bg_fff{background-color:#fff;}
+.ovehidden{overflow:hidden;}
+.show{display:block;}
+.hidden{display:none;}
+button:after{border:0;}

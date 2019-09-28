@@ -1,0 +1,12 @@
+<!--pages/login/login.wxml-->
+<view class="container">
+  <view class="login-top">
+    <image src="../../dist/images/wechat.png" class="wechat" />
+    <image src="../../dist/images/ico_25.png" class="link" />
+    <image src="../../dist/images/logo.png" class="logo" />
+  </view>
+  <view class="btn-group">
+    <!-- <button bindtap='getwxuseringo' class="go-login">登录并绑定</button> -->
+    <button open-type='getUserInfo' bindgetuserinfo='getwxuserinfo' class="go-login">登录并绑定</button>
+  </view>
+</view>

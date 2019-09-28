@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/my/my",
+    "pages/shopdetail/shopdetail",
+    "pages/orderdetail/orderdetail",
+    "pages/sellorder/sellorder",
+    "pages/login/login",
+    "pages/paysuccess/paysuccess",
+    "pages/reg/reg",
+    "pages/sureorder/sureorder",
+    "pages/payfail/payfail",
+    "pages/pay/pay"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "闲宝APP",
+    "backgroundColor": "#fff",
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "selectedColor": "#333",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "dist/images/ico_03.png",
+        "selectedIconPath": "dist/images/ico_03_1.png",
+        "text": "首页"
+      },
+     
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "dist/images/ico_06.png",
+        "selectedIconPath": "dist/images/ico_06_1.png",
+        "text": "个人中心"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wx31229a1ff8da6211"
+  ],
+  "debug": false,
+  "sitemapLocation": "sitemap87.json"
+}

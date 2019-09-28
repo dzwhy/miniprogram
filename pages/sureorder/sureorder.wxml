@@ -1,0 +1,76 @@
+<view class="container">
+  
+  <view class="pro_info bg_fff">
+    <view class="infoHead clearfix">
+      <view class="user_info fl">
+        <image src="{{detail.avater}}" class="user_ava" />
+        <text class="userName txt_Overflow">{{detail.username}}</text>
+        <!-- <text class="userState">普通用户</text> -->
+      </view>
+      
+    </view>
+    <view catchtap='jump_goods' data-url="../detail/detail?publish_id={{detail.publish_id}}">
+      <view class="buy_pro_detail pr clearfix">
+        <image mode='aspectFill' src="{{detail.image}}" class="fl" />
+        <view class="order-right">
+          <view class="order_pro_tit">
+            <text class="proName txt_Overflow">{{detail.title}}</text>
+            <text class="pro_price fr">￥{{detail.price}}</text>
+          </view>
+          <view class="orderDes">{{detail.desc}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="last_info bg_fff">
+    <view class="discount pad_30 clearfix">
+      <text>优惠劵</text>
+      <text class="no_use fr">暂无可用</text>
+    </view>
+    <view class="remark clearfix">
+      <text>备注</text>
+      <textarea bindinput='change' maxlength='140' placeholder="请输入内容"></textarea>
+      <view>给卖家的留言，50字以内</view>
+    </view>
+    <block wx:if="{{detail.zone_10==1}}">
+      <view class="verphoneBox">
+        <view class="topBox clearfix">
+          <view wx:if="{{a_type==1}}" catchtap='select_check' data-a_type='1' class="fl checkVer">
+            <image src="../../dist/images/ico_69.png" />
+          </view>
+          <view wx:else catchtap='select_check' data-a_type='0' class="fl checkVer">
+            <image src="../../dist/images/ico_70.png" />
+          </view>
+          支持邮寄验机
+        </view>
+        <view class="fr price">
+          <text>原价 {{detail.jd_info.jd_money}}</text>
+          <block wx:if="{{detail.jd_info.tg_open==1}}">
+            <text class="pro_price">￥{{detail.jd_info.tg_money}}</text>
+          </block>
+        </view>
+
+        <view class="bottomBox clearfix">
+          <view class="verPhone fl">取消验机服务，二货无法保证你所购买的手机是否为正品，建议您使用验机服务。</view>
+          <view class="fr exLabel">推广价</view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="order_foot bg_fff clearfix">
+    <view class="total fl">总计:
+      <text class="pro_price">￥{{total_money}}</text>
+    </view>
+    <view bindtap='gen_order' class="sure_btn btn fr">确认下单</view>
+  </view>
+</view>
+<view class="mask hidden">
+  <view class="maskDialog">
+    <image src="../../dist/images/ico_57.png" class="closed" />
+    <view class="maskTit">提示</view>
+    <view class="tipsTxt">
+      您选择鉴定服务后，二货将为您提供30天质保服务，鉴定服务需要卖家将手机寄往二货平台进行鉴定，请勿脱离平台交易或沟通，否则平台无法保障您的权益。
+    </view>
+    <button class="btn sureBtn">确定</button>
+  </view>
+</view>

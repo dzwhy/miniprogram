@@ -1,0 +1,24 @@
+@import "../sellorder/sellorder.wxss";
+page{background-color:#eee;}
+.state_txt{height:80px;line-height:80px;}
+.order_state{padding:20px;font-size:14px;}
+.seller_shop{border-bottom:1px solid #ddd;}
+.seller_shop{padding:8px 15px;margin-top:3px;border-top:1px solid #ddd;}
+.link_btn{margin-top:5px;}
+.pro_des{line-height:1.6;}
+.order_con,.p_box,.rec_tit{border-bottom:1px solid #eee;}
+.order_con>image{width:90px;height:90px;}
+.total,.p_box,.rec_tit{padding:0 15px;}
+.p_box{height:40px;line-height:40px;font-size:14px;}
+.total{height:50px;line-height:50px;font-size:13px;}
+.total .fl{color:#0096ff;}
+.rec_tit{height:50px;line-height:50px;font-size:14px;margin-top:10px;}
+.rec_con{padding:10px 15px;}
+.rec_con>view{margin:10px 0;}
+.foot_btn{position:fixed;bottom:0;left:0;width:100%;}
+.foot_btn>view{font-size:16px;border-radius:0;}
+.one{width: 100%}
+.two{width: 50%}
+.three{width: 33.33%}
+.delay_btn{width:80px;border-color:#fff;color:#fff;margin:5px auto 0;}
+.djs{color: red;}

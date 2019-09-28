@@ -1,0 +1,79 @@
+<template name="release_list">
+  <block wx:if="{{showLoading}}">
+    <view class="loading-tip">拼命加载中…</view>
+  </block>
+  <block wx:else>
+    <block wx:for="{{release}}" wx:key="index" wx:item="item">
+      <view bindtap='jump_check' data-url="{{path}}../detail/detail?publish_id={{item.publish_id}}" class="release-list list">
+        <view class="item-top">
+          <view class="top-con clearfix">
+            <image catchtap='jump_check' mode='aspectFill' data-url="{{path}}../otherhome/otherhome?seller_id={{item.seller_id}}" src="{{item.user_icon}}" class="user_ava fl" />
+            <view class="info_right fl">
+              <view class="user_name">{{item.user_name}}
+                <block wx:if="{{item.utype==1}}">
+                  <image src="{{path}}../../dist/images/v1_wz.png" class="rz_ico" />
+                </block>
+                <block wx:elif="{{item.utype==2}}">
+                  <image src="{{path}}../../dist/images/v2_wz.png" class="rz_ico" />
+                </block>
+              </view>
+              <view class="timer">
+                <image src="{{path}}../../dist/images/ico_02.png" />{{item.time}}来过</view>
+            </view>
+            <block wx:if="{{item.authenticate!=0}}">
+              <view class="identify fr"><image src="{{path}}../../dist/images/ico_88.png" />支持鉴定</view>
+            </block>
+          </view>
+          <scroll-view scroll-x="true">
+            <view class="uploadWrap" scroll-x="true">
+              <view class="upload_Item" wx:for="{{item.images}}" wx:for-index="indexa" wx:item="item">
+                <image mode='aspectFill' data-index='{{index}}' data-indexa='{{indexa}}' class="img_item" src="{{item}}" />
+              </view>
+            </view>
+          </scroll-view>
+          <view class="pro_num">
+            <text class="new_num">￥{{item.price}}</text>
+            <text class="old_num" wx:if="{{item.old_price}}">原价{{item.old_price}}</text>
+          </view>
+          <view class="pro_tit txt_Overflow">{{item.title}}</view>
+        </view>
+        <view class="item-foot clearfix">
+          <view class="address fl">
+            <image src="{{path}}../../dist/images/ico_26.png" />{{item.addre}}</view>
+          <view class="fr num-right">
+            <view class="comm-num fl">
+              <image src="{{path}}../../dist/images/ico_09.png" />
+              <block wx:if="{{item.msg_num>0}}">
+                {{item.msg_num}}
+              </block>
+            </view>
+            <block wx:if="{{item.collect==1}}">
+              <view class="like-num fl" catchtap="uncollect" data-id="{{item.publish_id}}" data-index="{{index}}">
+                <image src="{{path}}../../dist/images/ico_08_1.png" />
+                <block wx:if="{{item.coll_num>0}}">
+                  {{item.coll_num}}
+                </block>
+              </view>
+            </block>
+            <block wx:else>
+              <view class="like-num fl" catchtap="collect" data-id="{{item.publish_id}}" data-index="{{index}}">
+                <image src="{{path}}../../dist/images/ico_08.png" />
+                <block wx:if="{{item.coll_num>0}}">
+                  {{item.coll_num}}
+                </block>
+              </view>
+            </block>
+          </view>
+        </view>
+      </view>
+    </block>
+    <block wx:if="{{hasMore}}">
+      <block wx:if="{{!loading}}">
+        <view class="loading-tip">上拉加载</view>
+      </block>
+    </block>
+    <block wx:else>
+      <view class="loading-tip">没有更多内容了</view>
+    </block>
+  </block>
+</template>

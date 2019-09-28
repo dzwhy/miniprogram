@@ -1,0 +1,11 @@
+<view class="container">
+  <view class="suc_txt">
+    <icon type="success" size="50" />
+    <view>恭喜你支付成功</view>
+  </view>
+  <view class="suc_btn_group">
+      
+      <view bindtap='jump_check' data-order_id='{{order_id}}' data-a_type='{{detail.a_type}}' class="btn">查看订单</view>
+      <view bindtap='back_index' class="btn back_index">返回首页</view>
+  </view>
+</view>

@@ -1,0 +1,7 @@
+@import "../../common/style/style.wxss";
+.suc_txt{text-align:center;margin:30% 0 10%;}
+.suc_txt view{font-size:18px;color:#00c454;margin-bottom:5px;}
+.suc_txt text{font-size:15px;color:#666;}
+.suc_btn_group{text-align:center;}
+.suc_btn_group>view{display:inline-block;width:35%;height:45px;line-height:45px;font-size:17px;}
+.back_index{background-color:#eee;margin-left:11px;}

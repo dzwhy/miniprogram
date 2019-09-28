@@ -1,0 +1,21 @@
+<view class="container" style="height: {{windowHeight}}px">
+    <!--第一步-->
+    <view wx:if="{{step == 1}}" id="firstStep_Pad" class="step one">
+        <input id="input_phoneNum" class="telephone" bindchange="input_phoneNum" placeholder="请输入电话号码" type="number"/>
+    </view>
+    <!--第二步-->
+    <view wx:if="{{step==2}}" id="secondStep_Pad" class="step two">
+        <view class="code_tips">验证码已经发送到您的手机如长时间没有收到，请点击“重新获取”</view>
+        <view class="get_code pr">
+          <input bindchange="input_identifyCode" placeholder="请输入验证码" type="number"/>
+          <button bindtap="reSendPhoneNum" size="mini">重新获取({{time}}s)</button>
+        </view>
+    </view>
+    <!--第三步-->
+    <view wx:if="{{step==3}}" id="thirdStep_Pad" class="step thr">
+        <input bindchange="input_password" class="psd" placeholder="请输入密码" password/>
+        <input bindchange="input_rePassword" placeholder="请再次输入密码" password/>
+    </view>
+    <button style="width:{{nextButtonWidth}}px;margin-top:40rpx" 
+    type="primary" size="default" bindtap="nextStep">下一步</button>
+</view>

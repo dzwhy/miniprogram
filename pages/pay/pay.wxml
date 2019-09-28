@@ -1,0 +1,18 @@
+<!--pages/pay/pay.wxml-->
+<view class="container">
+  <block wx:if="{{pay_success==1}}">
+    <view class="suc_txt" style="text-align:center;">
+      <icon type="success" size="50" />
+      <view>恭喜你支付成功</view>
+    </view>
+    <view class="suc_btn_group">
+      <button type="primary" open-type="launchApp" app-parameter="wechat" binderror="launchAppError">返回</button>
+    </view>
+  </block>
+  <block wx:else="{{pay_success==0}}">
+    <view class="suc_txt" style="text-align:center;">
+      <icon type="waiting" size="50" />
+      <view>正在支付...</view>
+    </view>
+  </block>
+</view>

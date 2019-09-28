@@ -1,0 +1,14 @@
+@import "../../common/style/style.wxss";
+/* pages/login/login.wxss */
+page{background-color:#eee;}
+.login-top{margin:60rpx auto;text-align:center;}
+.login-top image{display:inline-block;}
+.login-top .wechat,.logo{width:112rpx;height:112rpx;}
+.link{width:46rpx;height:25rpx;margin:0 60rpx;vertical-align:40rpx;}
+.login-input{background-color:#fff;padding:0 30rpx;margin-bottom:60rpx;border-top:1px solid #ddd;border-bottom:1px solid #ddd;}
+.login-input .input-item{height:100rpx;line-height:100rpx;border-bottom:1px solid #eee;}
+.login-input .input-item:last-child{border-bottom:0;}
+.login-input .input-item text{float:left;width:20%;}
+.login-input .input-item input{float:left;width:80%;height:100%;}
+.btn-group{padding:0 30rpx;}
+.go-register{color:#ff8929;border:2px solid #ff8929;margin-top:50rpx;background-color:transparent;}

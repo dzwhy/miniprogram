@@ -1,0 +1,82 @@
+@import "../../common/style/style.wxss";
+page{background-color:#f3f4f5;}
+/*商品详情*/
+.swiper-item{display: block;height:100%;width:100%;}
+.tab-nav{width:100%;height:45px;line-height:45px;background-color:#fff;border-bottom:1px solid #ddd;text-align:center;display:flex;flex-direction:row;}
+.tab-nav view{position:relative;flex:1;font-size:15px;}
+.tab-nav.pfixed{position:fixed;top:0;z-index:5;}
+.tab-nav .active{color:#fed406;border-bottom:2px solid #fed406;}
+.index_search{position:absolute;top:10px;left:50%;margin-left:-45%;z-index: 888;}
+.search_box{width:80%;height:30px;padding-left:35px;background-color:rgba(255,255,255,.92);border-radius:50rpx;-webkit-border-radius:50rpx;overflow:hidden;}
+.search_box icon{position:absolute;top:8px;left:10px;}
+.search_box view{width:100%;height:30px;line-height:30px;font-size:13px;color:#999;}
+.scrollTop{position:fixed;bottom:20px;right:15px;}
+.scrollTop>image{width:30px;height:30px;}
+.topNav{display:-webkit-flex;display:flex;padding:60rpx 0 48rpx;}
+.topNav>view{-webkit-flex:1;flex:1;text-align:center;font-size:12px;}
+.topNav>view image{display:block;width:35px;height:31px;margin:0 auto 18rpx;}
+.oddsTit{height:96rpx;line-height:96rpx;padding:0 30rpx;}
+.oddsTit view{font-size:17px;}
+.oddsTit .overTime{font-size:13px;}
+.overTime>text{background-color:#fed406;margin:0 1px;padding:0 2px;-webkit-border-radius:2px;border-radius:2px;}
+.odds{margin-bottom:6px;}
+.oddsCon{padding:0 0 15px 7px;}
+.oddsCon image{-webkit-border-radius:4px;border-radius:4px;width:296rpx;height:296rpx;}
+.oddsCon .uploadWrap,.oddsCon .upload_Item{height:410rpx;width:296rpx;}
+.oddsCon .pro_price{display:block;font-size:12px;margin-top:10px;}
+.titTxt>image{width:13px;height:11px;vertical-align:1px;margin-left:5px;}
+.hideState{position:absolute;top:0;width:100%;height:100%;background-color:rgba(0,0,0,.5);}
+.hideState>image{display:block;width:70px;height:70px;margin:30px auto;}
+.hideState>image.hidden{display:none;}
+.newPrice{margin-top:18rpx;}
+.newPrice,.oldPrice{color:#e00f0f;font-size:12px;}
+.newPrice>text{font-size:16px;}
+.oldPrice{color:#c7c7c7;text-decoration:line-through;}
+.lookMore{text-align:center;height:45px;line-height:45px;border-top:1px solid #f3f4f5;}
+.lookMore>image{font-size:13px;width:8px;height:9px;margin-left:3px;}
+.bottomBox{padding:0 16rpx;}
+.discount{margin-top:6px;}
+.discount>image{width:35px;height:35px;}
+.itemItem{width:49%;padding-bottom:26rpx;float:left;margin-bottom:7px;}
+.itemItem:not(:nth-child(2n)){margin-right:2%;}
+.goodImg>image{width:100%;height:298rpx;}
+.goodTit{font-size:15px;}
+.imgLabel{position:absolute;top:9px;right:6px;padding:2px 5px;background-color:#29b772;color:#fff;font-size:12px;-webkit-border-radius:4px;border-radius:4px;}
+.imgLabel>image{width:10px;height:10px;margin-right:2px;}
+.phoneBox{padding:15rpx 22rpx;}
+.pro_price{font-size:12px;}
+.pro_price>text{font-size:14px;}
+.goodFoot{padding:0 30rpx;}
+.notData{height:20px;border-bottom:1px solid #ccc;position:relative;margin-bottom:30px;}
+.notData>text{position:absolute;top:12px;left:50%;margin-left:-58px;color:#999;font-size:12px;padding:0 15px;background-color:#f3f4f5;}
+.notData>text::before,.notData>text::after{content:'';position:absolute;top:50%;margin-top:-1px;width:4px;height:4px;background-color:#ccc;-webkit-border-radius:20px;border-radius:20px;}
+.notData>text::before{left:0;}
+.notData>text::after{right:0;}
+.discount>view{position:absolute;top:0;height:35px;line-height:35px;font-size:15px;color:#fff;text-align:center;}
+.discount>view text{font-size:8px;position:absolute;top:8px;right:-10px;line-height:1.2;}
+page{background-color:#f3f4f5;}
+swiper{height:422rpx;}
+.serviceTxt{padding:0 30rpx;font-size:12px;color:#666;margin:1px 0;height:30px;line-height:30px;}
+.serviceTxt>text{float:left;position:relative;padding-left:8px;}
+.serviceTxt>text:not(:last-child){margin-right:6.8%;}
+.serviceTxt>text::before{content:'';position:absolute;left:0;top:50%;margin-top:-2px;width:4px;height:4px;-webkit-border-radius:20px;border-radius:20px;background-color:#fdd501;}
+.goodsInfo{padding:0 30rpx 20rpx;}
+.goodsTit{padding:24rpx 0;}
+.goodsTit>image{width:14px;height:13px;margin-top:4px;}
+.goodsTit>view{width:95%;font-size:14px;}
+.nowPrice{font-size:12px;}
+.pro_price{display:inline-block;color:#e91d22;font-size:11px;}
+.pro_price>text,.listTit{font-size:14px;}
+.newsLabel{font-size:11px;color:#fdc92a;border:1px solid #fdc92a;padding:0 4px;-webkit-border-radius:2px;border-radius:2px;margin-left:14rpx;}
+.newsPrice{font-size:12px;color:#c4c4c4;margin:5px 0;}
+.priceNum{text-decoration:line-through;}
+.detailList{margin:16rpx 0;padding:16rpx 30rpx 26rpx;}
+.listDes{font-size:13px;color:#666;text-align:center;margin-top:13rpx;}
+.moreTit{margin-bottom:18rpx;font-size:14px;padding:0 30rpx;height:40px;line-height:40px;}
+.moreList{padding:0 18rpx;margin-bottom:50px;}
+.detailFoot{position:fixed;bottom:0;width:100%;height:50px;line-height:50px;}
+.footBox{padding-left:30rpx;}
+.footBox>image{width:28px;height:22px;margin-top:11px;margin-right:10%;}
+.totalNum{font-size:16px;}
+.totalNum>text{color:#e91d22;}
+.buyBtn{width:40%;height:50px;line-height:50px;background-color:#ef8019;color:#fff;font-size:16px;border-radius:0;}

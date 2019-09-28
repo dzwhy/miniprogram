@@ -1,0 +1,11 @@
+@import "../../common/style/style.wxss";
+page{background-color:#eee;}
+.container-hang{display: flex；flex-direction：row；background-color：#fff;}
+.one,.get_code>input,.thr{background-color:#fff;margin-top:10px;border-top:1px solid #ddd;border-bottom:1px solid #ddd;}
+.area,.thr>.psd{border-bottom:1px solid #eee;}
+.area,.telephone,.get_code>input,.thr>input{height:45px;line-height:45px;padding:0 15px;}
+.area>text,.two>.code_tips{color:#999;font-size:13px;}
+.area>.area_addr{color:#333;}
+.two{padding-top:10px;}
+.two>.code_tips{padding:10px 15px;}
+.get_code>button{position:absolute;right:15px;top:9px;z-index:3;}

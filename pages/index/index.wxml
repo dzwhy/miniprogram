@@ -1,0 +1,58 @@
+<scroll-view scroll-y bindscroll="scroll" upper-threshold="-100" bindscrolltoupper="onPullDownRefresh" bindscrolltolower="onReachBottom" scroll-top="{{top}}" style='height: {{sysheight}};margin-top:0;'>
+  <view class="top_banner pr">
+    <view class="swiper">
+      <swiper style="height: {{imgheightpx}}" indicator-dots="{{indicatorDots}}" indicator-color="{{indicatorColor}}" indicator-active-color="#fff" vertical="{{vertical}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+        <block wx:for="{{pic_url}}" wx:key="index" wx:item="item">
+          <swiper-item>
+            <image bindload='imageload' data-index='{{index}}' mode='scaleToFill' bindtap='jump_check'
+             data-url='{{item.link}}' data-wxappid='{{item.wxappid}}' class="swiper-item" src="{{item.picture}}" />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+  <!--新加的-->
+
+  <view class="odds">
+    <view class="oddsTit clearfix">
+      <view class="titTxt pr fl">优品特惠<image src="../../dist/images/ico_89.png" /></view>
+      <block wx:if="{{yp}}">
+        <text class="fr overTime">本次结束，将会上新</text>
+      </block>
+      <block wx:else>
+        <text class="fr overTime">距本次结束 {{yp_ltime.hr}}:{{yp_ltime.min}}:{{yp_ltime.sec}}</text>
+      </block>
+    </view>
+    <view class="oddsCon">
+      <scroll-view scroll-x="true">
+        <view class="uploadWrap" scroll-x="true">
+
+          <block wx:for="{{yp_sale}}" wx:key="key"  wx:for-item="item">
+            <view class="upload_Item" bindtap='jump_check' data-url="{{yp?'0':'../shopdetail/shopdetail?id='+item.id}}"  >
+              <view class="pr">
+                <image mode='aspectFill' class="img_item" src="{{item.icon}}" />
+
+                <block wx:if="{{yp}}"> <!--已结束-->
+                  <view class="hideState">
+                    <image mode='aspectFill' class="img_item" src="../../dist/images/ico_91.png" />
+                  </view>
+                </block>
+
+                <block wx:if="{{!yp && item.num<=0}}"><!--已卖完-->
+                  <view class="hideState">
+                    <image mode='aspectFill' class="img_item" src="../../dist/images/ico_90.png" />
+                  </view>
+                </block>
+
+              </view>
+              <view class="oddgoodTit txt_Overflow">{{item.name}}</view> 
+              <view class="oddgoodDes"><text>优惠</text>{{item.discounts}}折</view>
+              <text class="pro_price">￥{{item.zhprice}}</text>
+            </view>
+          </block>  
+          
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</scroll-view>

@@ -1,0 +1,62 @@
+<view class="top_banner">
+  <view class="swiper">
+    <swiper style="height: {{imgheightpx}}" indicator-dots="{{indicatorDots}}" indicator-color="{{indicatorColor}}" indicator-active-color="#fff" vertical="{{vertical}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+      <swiper-item wx:for="{{detail.pics}}">
+        <image mode="aspectFill"  class="swiper-item" src="{{item}}" data-id='{{index}}' bindtap='showimg' />
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class="serviceTxt bg_fff clearfix">
+    <text>七天包退</text>
+    <text>180天质保</text>
+    <text>51项质检</text>
+    <text>顺丰包邮</text>
+  </view>
+  <view class="goodsInfo bg_fff">
+    <view class="goodsTit clearfix">
+      <view class="fl">【官方自营】{{detail.name}} {{detail.tags}}</view>
+    </view>
+    <view class="nowPrice">
+      <text>现价</text>
+      <view class="pro_price">￥
+        <text>{{detail.zhprice}}</text>
+      </view>
+      <text class="newsLabel">{{detail.isnew}}</text>
+    </view>
+    <view class="newsPrice clearfix">
+      <text class="priceNum">原价￥{{detail.yprice}}</text>
+      <text class="fr">剩余{{detail.num}}件</text>
+    </view>
+  </view>
+</view>
+<view class="detailList bg_fff">
+  <view class="listTit">商品清单</view>
+  <view class="listDes">{{detail.detailed}}</view>
+</view>
+
+<view class="moreGoods">
+  <view class="moreTit bg_fff">更多商品</view>
+  <view class="moreList clearfix">
+    <block wx:for="{{others}}">
+      <view class="itemItem bg_fff" bindtap='getother' data-id='{{item.id}}' data-isYh='0' >
+        <view class="goodImg pr">
+          <image src="{{item.icon}}" mode='aspectFill' />
+        </view>
+        <view class="goodFoot">
+          <view class="goodTit txt_Overflow">{{item.name}}</view>
+          <view class="pro_price">￥
+            <text>{{item.zhprice}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+
+<view class="detailFoot bg_fff">
+  <view class="footBox clearfix">
+    <image src="../../../../../dist/images/ico_98.png" class="fl" bindtap='gettitle' />
+    <view class="totalNum fl">合计:<text>￥{{detail.zhprice}}</text></view>
+    <button class="buyBtn fr" bindtap='gobuy' >立即购买</button>
+  </view>
+</view>

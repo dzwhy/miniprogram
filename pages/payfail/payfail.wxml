@@ -1,0 +1,11 @@
+<view class="container">
+  <view class="suc_txt" style="text-align:center;" >
+    <icon type="cancel" size="50" />
+    <view>支付失败</view>
+  </view>
+  <view class="suc_btn_group">
+    <block>
+      <button type="primary" open-type="launchApp" app-parameter="wechat" binderror="launchAppError">返回</button>
+    </block>
+  </view>
+</view>

@@ -1,0 +1,56 @@
+<view class="container">
+  <view class="seller_shop bg_fff clearfix">
+    <block wx:if="{{detail.from==2}}">
+      <view class="seller_info fl">
+        <image catchtap='jump_check' data-url="../otherhome/otherhome?seller_id={{detail.buyer_id}}" src="{{detail.p_avater}}" class="user_ava" />
+        <text>{{detail.p_username}}</text>
+      </view>
+      </block>
+    <block wx:else>
+      <view class="seller_info fl">
+        <image catchtap='jump_check' data-url="../otherhome/otherhome?seller_id={{detail.seller_id}}" src="{{detail.p_avater}}" class="user_ava" />
+        <text>{{detail.p_username}}</text>
+      </view>
+    </block>
+  </view>
+  <view bindtap='jump_check' data-url="{{detail.goods_type>0?'../shopdetail/shopdetail':'../detail/detail'}}?publish_id={{detail.publish_id}}&isYh=3" class="order_con bg_fff pr clearfix">
+    <image mode='aspectFill' src="{{detail.goods_pic}}" class="fl" />
+    <view class="order-right">
+      <view class="order_pro_tit txt_Overflow">{{detail.goods_name}}</view>
+      <view class="pro_des small_six txt_Moreflow">{{detail.p_desc}}</view>
+    </view>
+    <text class="pro_price">¥ {{detail.p_price}}</text>
+  </view>
+  <view class="pro_total p_box bg_fff clearfix">
+    <text>商品总额</text>
+    <text class="fr">￥{{detail.p_price}}</text>
+  </view>
+  <view class="discount p_box bg_fff clearfix">
+    <text>优惠劵优惠</text>
+    <text class="fr">-￥0.00</text>
+  </view>
+  <view class="total bg_fff clearfix">
+    <view class="fl">
+      <image src="../../dist/images/ico_27.png" class="db_ico" />闲宝担保交易</view>
+    <view class="fr pay_total">支付总价：
+      <text>￥{{detail.p_price}}</text>
+    </view>
+  </view>
+  <view class="pro_remark small_six bg_fff">
+    <view class="rec_tit">备注</view>
+    <view class="rec_con">
+      <view class="clearfix">
+        <text>支付方式</text>
+        <text class="fr">{{detail.paytype}}</text>
+      </view>
+      <view class="clearfix">
+        <text>订单编号</text>
+        <text class="fr">{{detail.order_num}}</text>
+      </view>
+      <view class="clearfix">
+        <text>下单时间</text>
+        <text class="fr">{{detail.ctime}}</text>
+      </view>
+    </view>
+  </view>
+</view>
